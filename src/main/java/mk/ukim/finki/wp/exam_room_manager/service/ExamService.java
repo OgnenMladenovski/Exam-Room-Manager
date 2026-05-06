@@ -1,8 +1,12 @@
 package mk.ukim.finki.wp.exam_room_manager.service;
 
 import mk.ukim.finki.wp.exam_room_manager.model.Exam;
+import mk.ukim.finki.wp.exam_room_manager.model.Subject;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
 
 public interface ExamService {
-
-    Exam createExam(Exam exam);
+    Exam createExam(LocalDate examDate, LocalTime localTime, int duration, int numberOfStudents, Subject subject);
+    List<Exam> findAllBySubject(Subject subject);
 }
