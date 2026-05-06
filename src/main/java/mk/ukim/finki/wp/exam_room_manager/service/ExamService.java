@@ -7,6 +7,6 @@ import java.time.LocalTime;
 import java.util.List;
 
 public interface ExamService {
-    Exam createExam(LocalDate examDate, LocalTime localTime, int duration, int numberOfStudents, Subject subject);
+    Exam createExam(LocalDate exam_date, LocalTime start_time, int duration, int number_of_students, Subject subject);
     List<Exam> findAllBySubject(Subject subject);
 }

@@ -12,7 +12,7 @@ import java.util.List;
 
 @Entity
 @Data
-@Table
+@Table(name = "exams")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Exam {
@@ -21,9 +21,14 @@ public class Exam {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "exam_date")
     private LocalDate examDate;
+
+    @Column(name = "start_time")
     private LocalTime startTime;
     private int duration;
+
+    @Column(name = "number_of_students")
     private int numberOfStudents;
 
     @ManyToOne
@@ -41,7 +46,3 @@ public class Exam {
         this.subject = subject;
     }
 }
-
-
-//id, examDate (LocalDate), startTime (LocalTime), duration (int, minutes), numberOfStudents (int)
-//Relationship: many exams → one subject (@ManyToOne), one exam → many reservations (@OneToMany)

@@ -17,8 +17,8 @@ public class ExamServiceImpl implements ExamService {
     private final ExamRepository examRepository;
 
     @Override
-    public Exam createExam(LocalDate examDate, LocalTime localTime, int duration, int numberOfStudents, Subject subject) {
-        Exam exam = new Exam(examDate, localTime, duration, numberOfStudents, subject);
+    public Exam createExam(LocalDate exam_date, LocalTime start_time, int duration, int number_of_students, Subject subject) {
+        Exam exam = new Exam(exam_date, start_time, duration, number_of_students, subject);
         return examRepository.save(exam);
     }
 

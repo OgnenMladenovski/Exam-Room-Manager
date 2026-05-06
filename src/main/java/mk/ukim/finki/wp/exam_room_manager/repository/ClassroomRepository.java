@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface ClassroomRepository extends JpaRepository<Classroom, Long> {
-    List<Classroom> findAllByComputerAvailability(ComputerAvailability ca);
+    List<Classroom> findAllByComputerAvailability(ComputerAvailability computer_availability);
 }

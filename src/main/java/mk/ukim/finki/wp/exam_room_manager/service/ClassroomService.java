@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface ClassroomService {
     List<Classroom> findAll();
-    List<Classroom> findByComputerAvailability(ComputerAvailability computerAvailability);
+    List<Classroom> findByComputerAvailability(ComputerAvailability computer_availability);
 }

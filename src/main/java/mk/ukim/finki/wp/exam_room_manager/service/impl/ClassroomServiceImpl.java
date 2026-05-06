@@ -20,7 +20,7 @@ public class ClassroomServiceImpl implements ClassroomService {
     }
 
     @Override
-    public List<Classroom> findByComputerAvailability(ComputerAvailability computerAvailability) {
-        return classroomRepository.findAllByComputerAvailability(computerAvailability);
+    public List<Classroom> findByComputerAvailability(ComputerAvailability computer_availability) {
+        return classroomRepository.findAllByComputerAvailability(computer_availability);
     }
 }

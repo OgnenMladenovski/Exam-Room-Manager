@@ -11,7 +11,7 @@ import java.util.List;
 
 @Entity
 @Data
-@Table
+@Table(name = "classrooms")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Classroom {
@@ -23,6 +23,7 @@ public class Classroom {
     private String name;
     private int capacity;
 
+    @Column(name = "computer_availability")
     @Enumerated(EnumType.STRING)
     private ComputerAvailability computerAvailability;
 
