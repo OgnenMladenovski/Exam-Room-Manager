@@ -161,7 +161,7 @@ The ML service runs on http://localhost:8000
 ### Usage
 On the exam options page, enter the number of students and click **Predict Attendance** to get a prediction of how many students will actually show up.
 
-> The FastAPI server must be running alongside the Spring Boot application for the prediction feature to work.
+**The FastAPI server must be running alongside the Spring Boot application for the prediction feature to work.**
 
 ---
 
