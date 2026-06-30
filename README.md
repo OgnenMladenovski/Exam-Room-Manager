@@ -84,27 +84,6 @@ mk.ukim.finki.wp.exam_room_manager
 
 ---
 
-## Database Schema
-
-```
-professors
-├── id, username, password, full_name, email, professor_role
-
-subjects
-├── id, name, code, professor_id (FK → professors)
-
-classrooms
-├── id, name, capacity, computer_availability
-
-exams
-├── id, exam_date, start_time, duration, number_of_students, exam_type, subject_id (FK → subjects)
-
-reservations
-├── id, exam_id (FK → exams), classroom_id (FK → classrooms)
-```
-
----
-
 ### Project Setup
 
 **1. Clone the repository**
@@ -194,15 +173,6 @@ Login → Dashboard (subjects) → Options (calendar + time + duration + student
 | Classrooms | `/exam/classrooms` | Available classrooms with conflict highlighting |
 | Reservations | `/reservations` | All reservations with CRUD operations           |
 | Edit Reservation | `/reservations/edit/{id}` | Edit an existing reservation                    |
-
----
-
-## Flyway Migrations
-
-| Version | Description |
-|---------|-------------|
-| V1 | Create all tables |
-| V2 | Insert seed data (professors, subjects, classrooms) |
 
 ---
 
