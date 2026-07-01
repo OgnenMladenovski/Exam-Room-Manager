@@ -125,6 +125,7 @@ public class ReservationController {
     @ResponseBody
     public List<Map<String, Object>> getReservationsApi(
             @RequestParam(required = false) String subjectName,
+            @RequestParam(required = false, defaultValue = "mine") String scope,
             @AuthenticationPrincipal UserDetails userDetails) {
 
         Professor professor = professorService.findByUsername(userDetails.getUsername());
@@ -134,6 +135,12 @@ public class ReservationController {
             reservations = reservationService.findAll();
         } else {
             reservations = reservationService.findAllBySubjectName(subjectName);
+        }
+
+        if (!"all".equals(scope)) {                                              // ДОДАДЕНО
+            reservations = reservations.stream()
+                    .filter(r -> r.getExam().getSubject().getProfessor().getId().equals(professor.getId()))
+                    .toList();
         }
 
         return reservations.stream().map(r -> {

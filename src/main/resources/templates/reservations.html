@@ -5,6 +5,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.11/locales/mk.global.min.js"></script>
     <title>Резервации</title>
 </head>
 <body>
@@ -35,13 +36,13 @@
                 </option>
             </select>
 
-            <input class="filter-date" type="date" name="examDate"
-                   th:value="${selectedDate}"/>
-
             <select name="scope" class="filter-select" onchange="this.form.submit()">
                 <option value="mine" th:selected="${selectedScope == 'mine'}">Мои резервации</option>
                 <option value="all" th:selected="${selectedScope == 'all'}">Сите професори</option>
             </select>
+
+            <input class="filter-date" type="date" name="examDate"
+                   th:value="${selectedDate}"/>
 
             <button class="btn-filter" type="submit">Филтрирај</button>
 
@@ -66,6 +67,10 @@
     </div>
 </div>
 
+<footer class="dashboard-footer">
+    <p>&copy; 2026 FINKI Exam Room Manager. Веб Програмирање</p>
+</footer>
+
 <script th:inline="javascript">
     const loggedInProfessorId = /*[[${loggedInProfessor.id}]]*/ null;
     const selectedSubject = /*[[${selectedSubjectName ?: ''}]]*/ '';
@@ -85,7 +90,8 @@
                 url: '/reservations/api',
                 extraParams: function() {
                     return {
-                        subjectName: selectedSubject
+                        subjectName: selectedSubject,
+                        scope: /*[[${selectedScope ?: 'mine'}]]*/ 'mine'
                     };
                 },
                 failure: function () {
