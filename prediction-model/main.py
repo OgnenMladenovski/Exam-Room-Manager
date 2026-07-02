@@ -32,21 +32,22 @@ def predict(req: PredictRequest):
 
     if len(subject_to_predict) != 0:
         avg_rate = float(subject_to_predict["subject_avg_rate"].values[0])
-        features = pd.DataFrame([{
-            "subject_id": req.subject_id,
-            "enrolled_survey": req.enrolled_survey,
-            "subject_avg_rate": avg_rate,
-        }])
-        predicted_number_students = int(round(model.predict(features)[0]))
     else:
         avg_rate = float(subject_average_rates["subject_avg_rate"].mean())
-        predicted_number_students = int(round(req.enrolled_survey * avg_rate))
 
+    features = pd.DataFrame([{
+        "enrolled_survey": req.enrolled_survey,
+        "subject_avg_rate": avg_rate,
+    }])
+    predicted_rate = float(model.predict(features)[0])
+    predicted_rate = min(max(predicted_rate, 0.0), 1.0)
 
-    predicted_number_students = max(0, predicted_number_students)
-    rate = round(predicted_number_students / req.enrolled_survey, 4)
+    predicted_number_students = int(round(req.enrolled_survey * predicted_rate))
+    predicted_number_students = max(0, min(predicted_number_students, req.enrolled_survey))
 
-    return PredictResponse(predicted_attendance = predicted_number_students, attendance_rate = rate)
+    rate = round(predicted_number_students / req.enrolled_survey, 4) if req.enrolled_survey else 0.0
+
+    return PredictResponse(predicted_attendance=predicted_number_students, attendance_rate=rate)
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
