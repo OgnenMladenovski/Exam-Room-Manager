@@ -88,11 +88,9 @@ exam-room-manager/
 │       ├── ExamController.java
 │       └── ReservationController.java
 └── prediction-model/
-    ├── main.py                      
-    ├── attendance_model.pkl         
-    ├── attendance_prediction.ipynb  
-    ├── exam_attendance_data.csv     
-    └── subject_avg_rates.csv        
+    ├── main.py                             
+    ├── attendance_prediction.ipynb   
+    └── exam_attendance_data.csv      
 ```
 
 ---
