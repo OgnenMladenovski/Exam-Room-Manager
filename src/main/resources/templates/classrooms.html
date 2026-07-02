@@ -40,7 +40,7 @@
                 <option value="">Сите простории</option>
                 <option th:each="ca : ${computerAvailabilities}"
                         th:value="${ca}"
-                        th:text="${ca}"
+                        th:text="${ca.label}"
                         th:selected="${ca == selectedFilter}">
                 </option>
             </select>
@@ -68,7 +68,7 @@
                     <span class="classroom-name" th:text="${classroom.name}"></span>
                     <span class="classroom-details">
                         Капацитет: <span th:text="${classroom.capacity}"></span> •
-                        <span th:text="${classroom.computerAvailability}"></span>
+                        <span th:text="${classroom.computerAvailability.label}"></span>
                     </span>
                 </div>
                 <span th:if="${unavailableIds.contains(classroom.id)}" class="unavailable-badge">Зафатена</span>

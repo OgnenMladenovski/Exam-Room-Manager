@@ -90,7 +90,6 @@
             const predicted = data.predicted_attendance;
             const rate = Math.round(data.attendance_rate * 100);
 
-            document.getElementById('numberOfStudents').value = predicted;
             const result = document.getElementById('predictResult');
             result.textContent = `Предвидено: ${predicted} студенти (${rate}% присуство)`;
             result.classList.remove('hidden');
