@@ -559,3 +559,22 @@ body {
 .btn-cancel:hover {
     background: #fee2e2;
 }
+
+.dashboard-footer {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    color: #888;
+    font-size: 13px;
+    border-top: 1px solid #eee;
+}
+
+.footer-links a {
+    margin: 0 8px;
+    color: #888;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #333;
+}

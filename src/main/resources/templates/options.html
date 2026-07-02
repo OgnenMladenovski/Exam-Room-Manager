@@ -10,7 +10,7 @@
 <header class="dashboard-header">
     <img th:src="@{/images/moodle-io.png}" alt="FINKI Logo" class="dashboard-logo">
     <div class="dashboard-header-actions">
-        <a class="btn-reservations" th:href="@{/dashboard}">← Dashboard</a>
+        <a class="btn-reservations" th:href="@{/dashboard}">← Назад кон Предмети</a>
         <form th:action="@{/logout}" method="post">
             <button class="btn-logout" type="submit">Одјава</button>
         </form>
@@ -40,24 +40,27 @@
             </div>
 
             <div class="field-group">
-                <label class="field-label">Број на запишани студенти</label>
+                <label class="field-label">Број на пријавени студенти</label>
                 <input class="field-input" type="number" id="enrolledInput" min="1" placeholder="пр. 200"/>
             </div>
 
+
             <button type="button" class="btn-predict" id="predictBtn">
-                🤖 Предвиди присуство
+                Предвиди присуство
             </button>
 
             <p class="predict-result hidden" id="predictResult"></p>
 
-            <div class="field-group" style="margin-top: 16px">
-                <label class="field-label">Очекуван број на студенти</label>
-                <input class="field-input" type="number" name="numberOfStudents" id="numberOfStudents" min="1" placeholder="пр. 60" required/>
-            </div>
+            <input type="hidden" name="numberOfStudents" id="numberOfStudents"/>
+
 
             <button class="btn-submit" type="submit">Види слободни простории →</button>
         </form>
     </div>
+
+    <footer class="dashboard-footer">
+        <p>&copy; 2026 FINKI Exam Room Manager. Веб Програмирање</p>
+    </footer>
 </div>
 
 <script th:inline="javascript">
@@ -96,7 +99,7 @@
         } catch (e) {
             alert('Грешка при поврзување со prediction сервисот.');
         } finally {
-            this.textContent = '🤖 Предвиди присуство';
+            this.textContent = 'Предвиди присуство';
             this.disabled = false;
         }
     });
