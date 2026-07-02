@@ -39,17 +39,16 @@
                 <input class="field-input" type="number" name="duration" min="10" max="300" placeholder="пр. 120" required/>
             </div>
 
-            <div class="field-group">
-                <label class="field-label">Број на пријавени студенти</label>
-                <input class="field-input" type="number" id="enrolledInput" min="1" placeholder="пр. 200" required/>
+            <label class="field-label" style=" white-space: nowrap;">Број на пријавени студенти</label>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; margin-top: 12px;">
+                <input class="field-input" type="number" id="enrolledInput" min="1" placeholder="пр. 200" required style="flex: 1; margin-bottom: 0;"/>
+                <button type="button" class="btn-predict" id="predictBtn" style="flex: 1; margin-bottom: 0;">
+                    Предвиди присуство
+                </button>
             </div>
 
 
-            <button type="button" class="btn-predict" id="predictBtn">
-                Предвиди присуство
-            </button>
-
-            <p class="predict-result hidden" id="predictResult"></p>
+            <p class="predict-result hidden" id="predictResult" style="text-align: center"></p>
 
             <input type="hidden" name="numberOfStudents" id="numberOfStudents"/>
 
