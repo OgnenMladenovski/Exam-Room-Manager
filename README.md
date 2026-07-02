@@ -44,42 +44,55 @@ A web application for professors and assistant professors to schedule and reserv
 The project follows a standard **layered architecture**:
 
 ```
-mk.ukim.finki.wp.exam_room_manager
-├── config/
-│   └── SecurityConfig.java
-├── model/
-│   ├── Professor.java
-│   ├── Subject.java
-│   ├── Classroom.java
-│   ├── Exam.java
-│   ├── Reservation.java
-│   └── enums/
-│       ├── ComputerAvailability.java
-│       ├── ExamType.java
-│       └── ProfessorRole.java
-├── repository/
-│   ├── ProfessorRepository.java
-│   ├── SubjectRepository.java
-│   ├── ClassroomRepository.java
-│   ├── ExamRepository.java
-│   └── ReservationRepository.java
-├── service/
-│   ├── ProfessorService.java
-│   ├── SubjectService.java
-│   ├── ClassroomService.java
-│   ├── ExamService.java
-│   ├── ReservationService.java
-│   └── impl/
-│       ├── ProfessorServiceImpl.java
-│       ├── SubjectServiceImpl.java
-│       ├── ClassroomServiceImpl.java
-│       ├── ExamServiceImpl.java
-│       └── ReservationServiceImpl.java
-└── web/
-    ├── AuthController.java
-    ├── DashboardController.java
-    ├── ExamController.java
-    └── ReservationController.java
+exam-room-manager/
+├── src/main/java/mk/ukim/finki/wp/exam_room_manager/
+│   ├── ExamRoomManagerApplication.java
+│   ├── config/
+│   │   └── SecurityConfig.java
+│   ├── model/
+│   │   ├── Professor.java
+│   │   ├── Subject.java
+│   │   ├── Classroom.java
+│   │   ├── Exam.java
+│   │   ├── Reservation.java
+│   │   ├── enums/
+│   │   │   ├── ComputerAvailability.java
+│   │   │   └── ProfessorRole.java
+│   │   └── exceptions/
+│   │       ├── ClassroomNotFoundException.java
+│   │       ├── ConflictException.java
+│   │       ├── ReservationNotFoundException.java
+│   │       ├── SubjectNotFoundException.java
+│   │       └── UsernameNotFoundException.java
+│   ├── repository/
+│   │   ├── ProfessorRepository.java
+│   │   ├── SubjectRepository.java
+│   │   ├── ClassroomRepository.java
+│   │   ├── ExamRepository.java
+│   │   └── ReservationRepository.java
+│   ├── service/
+│   │   ├── ProfessorService.java
+│   │   ├── SubjectService.java
+│   │   ├── ClassroomService.java
+│   │   ├── ExamService.java
+│   │   ├── ReservationService.java
+│   │   └── impl/
+│   │       ├── ProfessorServiceImpl.java
+│   │       ├── SubjectServiceImpl.java
+│   │       ├── ClassroomServiceImpl.java
+│   │       ├── ExamServiceImpl.java
+│   │       └── ReservationServiceImpl.java
+│   └── web/
+│       ├── AuthController.java
+│       ├── DashboardController.java
+│       ├── ExamController.java
+│       └── ReservationController.java
+└── prediction-model/
+    ├── main.py                      
+    ├── attendance_model.pkl         
+    ├── attendance_prediction.ipynb  
+    ├── exam_attendance_data.csv     
+    └── subject_avg_rates.csv        
 ```
 
 ---
