@@ -1,6 +1,6 @@
 # Exam room resource management application
 
-> Project for the course **Web Programming** at the Faculty of Computer Science and Engineering (FINKI), Ss. Cyril and Methodius University, Skopje.
+Project for the course **Web Programming** at the Faculty of Computer Science and Engineering (FINKI), Ss. Cyril and Methodius University, Skopje.
 
 ---
 
@@ -45,40 +45,75 @@ The project follows a standard **layered architecture**:
 
 ```
 mk.ukim.finki.wp.exam_room_manager
+│ 
 ├── config/
+│   │ 
 │   └── SecurityConfig.java
+│ 
 ├── model/
+│   │ 
 │   ├── Professor.java
+│   │ 
 │   ├── Subject.java
+│   │ 
 │   ├── Classroom.java
+│   │ 
 │   ├── Exam.java
+│   │ 
 │   ├── Reservation.java
+│   │ 
 │   └── enums/
+│       │ 
 │       ├── ComputerAvailability.java
+│       │ 
 │       ├── ExamType.java
+│       │ 
 │       └── ProfessorRole.java
+│ 
 ├── repository/
+│   │ 
 │   ├── ProfessorRepository.java
+│   │ 
 │   ├── SubjectRepository.java
+│   │ 
 │   ├── ClassroomRepository.java
+│   │ 
 │   ├── ExamRepository.java
+│   │ 
 │   └── ReservationRepository.java
+│ 
 ├── service/
+│   │ 
 │   ├── ProfessorService.java
+│   │ 
 │   ├── SubjectService.java
+│   │ 
 │   ├── ClassroomService.java
+│   │ 
 │   ├── ExamService.java
+│   │ 
 │   ├── ReservationService.java
+│   │ 
 │   └── impl/
+│       │ 
 │       ├── ProfessorServiceImpl.java
+│       │ 
 │       ├── SubjectServiceImpl.java
+│       │ 
 │       ├── ClassroomServiceImpl.java
+│       │ 
 │       ├── ExamServiceImpl.java
+│       │ 
 │       └── ReservationServiceImpl.java
+│ 
 └── web/
+    │ 
     ├── AuthController.java
+    │ 
     ├── DashboardController.java
+    │ 
     ├── ExamController.java
+    │ 
     └── ReservationController.java
 ```
 
